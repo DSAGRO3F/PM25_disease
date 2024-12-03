@@ -148,7 +148,7 @@ l_of_lists = create_list_of_dict(list_of_dictionaries, 12)
 
 
 
-app = dash.Dash(__name__, 
+db_app = dash.Dash(__name__, 
                 use_pages=True,
                 external_stylesheets=[dbc.themes.UNITED])
 
@@ -183,7 +183,7 @@ sidebar = html.Div([
 
 
 
-app.layout = dbc.Container([
+db_app.layout = dbc.Container([
 
     html.Div(
         [dcc.Store(id=f'store-{i}', data=new_list[i].to_dict('records')) for i in range(len(new_list))
@@ -219,7 +219,7 @@ app.layout = dbc.Container([
         
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    db_app.run(debug=True)
 
 
 
